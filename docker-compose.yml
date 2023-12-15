@@ -1,0 +1,9 @@
+version: '3'
+services:
+  southy:
+    build: ./southy
+    container_name: 'southy'
+    working_dir: '/southy'
+    tty: true
+    volumes:
+      - ./southy:/southy
