@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 flake8 = "^7.0.0"
 black = "^23.12.1"
+pylint = "^3.0.3"
 
 [tool.black]
 line-length = 119
