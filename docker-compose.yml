@@ -1,9 +1,16 @@
 version: '3'
 services:
   southy:
-    build: ./southy
+    build: ./src
     container_name: 'southy'
-    working_dir: '/southy'
     tty: true
     volumes:
-      - ./southy:/southy
+      - type: bind
+        source: ./src
+        target: /work
+      - type: volume
+        source: packages
+        target: /usr/local/lib/python3.12/site-packages
+
+volumes:
+  packages:
