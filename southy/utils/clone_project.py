@@ -1,13 +1,27 @@
 import subprocess
 import sys
 sys.path.append('../')
+from constants import path
 
-#リポジトリのクローン
-def clone_project(url: str):
-    destination_path = f'{sys.path[-1]}/tmp'
+def clone_project(url):
+    
+    """リポジトリのクローン
+
+    入力したurlのプロジェクトをクローンするメソッド.
+    root直下のtmpにプロジェクトがクローンされる
+
+    Args:
+        url (str): プロジェクトのurl
+
+    Raises:
+            subprocess.CalledProcessError:  git cloneのコマンドに失敗した場合に発生
+    """
+    
+    destination_path = path.TMP
     command = ['git', 'clone', url, destination_path]
 
     try:
         subprocess.run(command, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error cloning repository: {e}")
+

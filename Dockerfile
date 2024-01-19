@@ -1,8 +1,8 @@
 FROM python:3.12.1
 
-WORKDIR /work
+WORKDIR /southy
 
-COPY . /work
+COPY . /southy
 
 RUN apt-get update &&\
     apt-get -y install locales &&\
@@ -15,7 +15,7 @@ ENV TERM xterm
 
 RUN pip install --upgrade pip
 
-RUN pip install poetry
-
-RUN poetry install &&\
+RUN pip install poetry &&\
     poetry config virtualenvs.create false
+
+RUN poetry install 

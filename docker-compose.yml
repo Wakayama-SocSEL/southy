@@ -1,4 +1,3 @@
-version: '3'
 services:
   southy:
     build: .
@@ -7,7 +6,7 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /work
+        target: /southy
       - type: volume
         source: packages
         target: /usr/local/lib/python3.12/site-packages

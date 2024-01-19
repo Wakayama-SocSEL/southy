@@ -1,7 +1,14 @@
 import shutil
 
-#指定pathのフォルダの削除
 def delete_folder(path):
+    
+    """ディレクトリ削除
+
+    引数で指定したpathのディレクトリの強制削除
+
+    Args:
+        path (str): 削除したいディレクトリへのpath
+    """
     try:
         shutil.rmtree(path)
     except OSError as e:

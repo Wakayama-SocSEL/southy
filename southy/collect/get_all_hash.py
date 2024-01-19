@@ -1,10 +1,18 @@
 import sys
 import subprocess
-from utils import clone_project
 sys.path.append('../')
 
-#プロジェクトのすべてのハッシュ値の取得
-def get_all_hash(url: str):
+
+def get_all_hash(path):
+    """ハッシュ値の取得
+    クローンしてきたプロジェクトの全部のハッシュ値の取得
+    Args:
+        path (str): クローンしてきたプロジェクトを一時保存している場所への絶対パス
+
+    Raises:
+            subprocess.CalledProcessError:  gitコマンドに失敗した場合に発生
+
+    """
     command = [
         'git',
         'log',
