@@ -5,9 +5,8 @@ from constants import path
 
 def clone_project(url):
     
-    """リポジトリのクローン
-
-    入力したurlのプロジェクトをクローンするメソッド.
+    """
+    入力したurlのプロジェクトをクローンするメソッド,
     root直下のtmpにプロジェクトがクローンされる
 
     Args:
