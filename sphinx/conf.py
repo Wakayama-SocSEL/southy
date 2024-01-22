@@ -33,3 +33,6 @@ language = 'ja'
 
 html_theme = 'cloud'
 html_static_path = ['_static']
+html_sidebars = {
+   '**': ['localtoc.html', 'searchbox.html']
+}
