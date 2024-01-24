@@ -1,7 +1,5 @@
 import subprocess
-import sys
-sys.path.append('../')
-from constants import path
+from constant import path
 
 def clone_project(url):
     
@@ -16,7 +14,7 @@ def clone_project(url):
             subprocess.CalledProcessError:  git cloneのコマンドに失敗した場合に発生
     """
     
-    destination_path = path.TMP
+    destination_path = path.ORIGIN
     command = ['git', 'clone', url, destination_path]
 
     try:

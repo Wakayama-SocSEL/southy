@@ -1,5 +1,4 @@
 import shutil
-
 def delete_folder(path):
     
     """
