@@ -1,4 +1,6 @@
 import subprocess
+import os
+import shutil
 from constant import path
 
 def clone_project(url):
@@ -18,6 +20,8 @@ def clone_project(url):
     command = ['git', 'clone', url, destination_path]
 
     try:
+        if os.path.exists(destination_path):
+            shutil.rmtree(destination_path)
         subprocess.run(command, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error cloning repository: {e}")
