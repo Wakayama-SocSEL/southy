@@ -3,8 +3,9 @@ import os
 import shutil
 from collect import GetHash
 from utils import clone_project
+from constant import path
 
-def main(url, begin_date, ROOT):
+def main(url,ROOT, begin_date = None):
     """main関数.
 
     Args:
@@ -12,24 +13,23 @@ def main(url, begin_date, ROOT):
         begin_date (_type_): _description_
     """
     clone_project(url, ROOT)
-    get_diff(begin_date, f'{ROOT}/tmp')
+    get_diff(ROOT, begin_date)
 
-def __checkout_project_at_hash(hash_val):
-    """ 指定されたハッシュ値でプロジェクトを復元する
+# def __checkout_project_at_hash(hash_val, from_path):
+#     """ 指定されたハッシュ値でプロジェクトを復元する
 
-    Args:
-        hash_val (str): プロジェクトを復元するハッシュ値
-        project_path (str): プロジェクトのディレクトリへのパス
-    """
-    command = ['git', 'checkout', hash_val]
-    try:
-        subprocess.run(command, check=True, cwd=path.ORIGIN)
-        print(f"Checked out to {hash_val}")
-    except subprocess.CalledProcessError as e:
-        print(f"Error checking out to {hash_val}: {e}")
+#     Args:
+#         hash_val (str): プロジェクトを復元するハッシュ値
+#         project_path (str): プロジェクトのディレクトリへのパス
+#     """
+#     command = ['git', 'checkout', hash_val]
+#     try:
+#         subprocess.run(command, check=True, cwd=from_path, text=False)
+#     except subprocess.CalledProcessError as e:
+#         print(f"Error checking out to {hash_val}: {e}")
 
 
-def get_diff(begin_date, TMP):
+def get_diff(root, begin_date = None):
     """開始日以降のdiffをとる
 
     Args:
@@ -38,33 +38,25 @@ def get_diff(begin_date, TMP):
 
     """
     hash_list = []
-    from_path = f'{TMP}/from'
-    to_path = f'{TMP}/to'
+    save_path = f'{root}/tmp/out'
 
     gh = GetHash(begin_date)
-    hash_list = gh.get_hash()
+    hash_list = gh.get_hash(root)
 
-    for i, hash in enumerate(hash_list):
-        if i == 0:
-            __checkout_project_at_hash(hash)
-            if not os.path.exists(from_path):
-                shutil.copytree(path.ORIGIN, from_path)
-            continue
-
-        __checkout_project_at_hash(hash)
-        if os.path.exists(to_path):
-            shutil.rmtree(to_path)
-        shutil.copytree(path.ORIGIN, to_path)
-
+    for i in range(len(hash_list) - 1):
         # 'from' と 'to' 間の差分を計算
-        diff_command = ['git', 'diff', '--name-only', f'{from_path}', f'{to_path}']
-        diff_result = subprocess.check_output(diff_command, text=True)
-        print(f"Diff for {hash_list[i-1]} to {hash}:\n{diff_result}")
+        diff_command = ['git', 'diff', hash_list[i], hash_list[i+1]]
+        diff_result = subprocess.run(diff_command, capture_output=True, text=True, errors='replace')
+        
+        # 出力ファイルのパス
+        output_file_path = f'{save_path}/{hash_list[i]}_{hash_list[i+1]}_output.txt'
 
-        # 次の比較のために 'to' を 'from' に移動
-        shutil.rmtree(from_path)
-        shutil.move(to_path, from_path)
+        # ファイルに結果を書き込む
+        with open(output_file_path, 'w', encoding='utf-8') as file:
+            file.write(diff_result.stdout)
+
+        print(f"Diff has been saved to {output_file_path}")
 
 
 if __name__ == '__main__':
-    main('https://github.com/tomoya0318/tomoya0318.git', '2024-1-1')
+    main('https://github.com/Wakayama-SocSEL/southy.git',path.ROOT)

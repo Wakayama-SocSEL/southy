@@ -3,7 +3,6 @@ import os
 from utils import clone_project
 from utils import delete_dir
 from constant import path
-clone_project('https://github.com/tomoya0318/tomoya0318.git', path.ROOT)
 
 class TestUtils(unittest.TestCase):
     def setUp(self):
