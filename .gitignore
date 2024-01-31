@@ -1,6 +1,4 @@
 .vscode
 tmp
-docs/_build
-docs/_templates
 __pycache__
 dist
