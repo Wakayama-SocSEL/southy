@@ -18,4 +18,4 @@ RUN pip install --upgrade pip
 RUN pip install poetry &&\
     poetry config virtualenvs.create false
 
-RUN poetry install 
+RUN poetry install --no-root

@@ -1,2 +1,2 @@
-from .clone_project import *
-from .delete_folder import *
+from .project_cloner import *
+from .dir_deleter import *

@@ -1,5 +1,4 @@
 import subprocess
-from constant import path
 from datetime import datetime
 
 class GetHash:
@@ -14,7 +13,7 @@ class GetHash:
         """
         self.begin_date = begin_date
     
-    def __get_all_hash(self):
+    def __get_all_hash(self, TMP):
         """ クローンしてきたプロジェクトの全部のハッシュ値の取得
 
         Args:
@@ -34,12 +33,12 @@ class GetHash:
             '--pretty=format:%cd %H'
         ]
         try:
-            result = subprocess.check_output(command, text=True, cwd=path.ORIGIN)
+            result = subprocess.check_output(command, text=True, cwd=f'{TMP}/ORIGIN')
             return result
         except subprocess.CalledProcessError as e:
             return(f"Error executing Git command: {e}")
         
-    def get_hash(self):
+    def get_hash(self, TMP):
         """指定日以降のhash値の取得
 
         Args:
@@ -47,7 +46,7 @@ class GetHash:
             date_hash(str): get_all_hashメソッドの受け取り用
         """
         hash_list = []
-        date_hash = self.__get_all_hash()
+        date_hash = self.__get_all_hash(TMP)
 
         for line in  date_hash.split('\n'):
             if line:

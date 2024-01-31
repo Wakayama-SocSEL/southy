@@ -1,5 +1,5 @@
 import shutil
-def delete_folder(path):
+def delete_dir(path):
     
     """
     引数で指定したpathのディレクトリの強制削除

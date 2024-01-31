@@ -1,9 +1,8 @@
 import subprocess
 import os
 import shutil
-from constant import path
 
-def clone_project(url):
+def clone_project(url, ROOT):
     
     """
     入力したurlのプロジェクトをクローンするメソッド,
@@ -16,7 +15,7 @@ def clone_project(url):
             subprocess.CalledProcessError:  git cloneのコマンドに失敗した場合に発生
     """
     
-    destination_path = path.ORIGIN
+    destination_path = f'{ROOT}/tmp/origin'
     command = ['git', 'clone', url, destination_path]
 
     try:

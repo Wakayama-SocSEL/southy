@@ -1,2 +1,2 @@
-from .GetHash import *
-from .get_diff import *
+from .Hash import *
+from .diff import *

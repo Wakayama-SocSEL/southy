@@ -1,10 +1,20 @@
 import subprocess
 import os
 import shutil
-from constant import path
 from collect import GetHash
+from utils import clone_project
 
-def _checkout_project_at_hash(hash_val):
+def main(url, begin_date, ROOT):
+    """main関数.
+
+    Args:
+        url (_type_): _description_
+        begin_date (_type_): _description_
+    """
+    clone_project(url, ROOT)
+    get_diff(begin_date, f'{ROOT}/tmp')
+
+def __checkout_project_at_hash(hash_val):
     """ 指定されたハッシュ値でプロジェクトを復元する
 
     Args:
@@ -19,23 +29,29 @@ def _checkout_project_at_hash(hash_val):
         print(f"Error checking out to {hash_val}: {e}")
 
 
-def get_diff(begin_date):
+def get_diff(begin_date, TMP):
+    """開始日以降のdiffをとる
 
+    Args:
+        begin_date (str): 測定の開始日
+        TMP: 一時保存用ディレクトリ
+
+    """
     hash_list = []
-    from_path = f'{path.TMP}/from'
-    to_path = f'{path.TMP}/to'
+    from_path = f'{TMP}/from'
+    to_path = f'{TMP}/to'
 
     gh = GetHash(begin_date)
     hash_list = gh.get_hash()
 
     for i, hash in enumerate(hash_list):
         if i == 0:
-            _checkout_project_at_hash(hash)
+            __checkout_project_at_hash(hash)
             if not os.path.exists(from_path):
                 shutil.copytree(path.ORIGIN, from_path)
             continue
 
-        _checkout_project_at_hash(hash)
+        __checkout_project_at_hash(hash)
         if os.path.exists(to_path):
             shutil.rmtree(to_path)
         shutil.copytree(path.ORIGIN, to_path)
@@ -50,4 +66,5 @@ def get_diff(begin_date):
         shutil.move(to_path, from_path)
 
 
-
+if __name__ == '__main__':
+    main('https://github.com/tomoya0318/tomoya0318.git', '2024-1-1')
