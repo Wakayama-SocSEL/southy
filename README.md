@@ -17,5 +17,5 @@ utilsというディレクトリのモジュール`project_cloner.py`から関�
 ```
 from utils import clone_project
 
-clone_project(https://github.com/Wakayama-SocSEL/southy.git', '.')
+clone_project('https://github.com/Wakayama-SocSEL/southy.git', '.')
 ```
