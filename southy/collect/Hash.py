@@ -17,7 +17,7 @@ class GetHash:
         """ クローンしてきたプロジェクトの全部のハッシュ値の取得
 
         Args:
-            root(str): rootへのpath
+            root(str): プロジェクトのrootへのpath
 
         Raises:
             subprocess.CalledProcessError:  gitコマンドに失敗した場合に発生

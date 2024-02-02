@@ -10,7 +10,7 @@ class TestUtils(unittest.TestCase):
         self.root = path.ROOT
 
     def test_clone_project(self):
-        clone_project(self.url, self.root)
+        clone_project(self.root, self.url)
         dir = f'{path.TMP}/origin'
         self.assertTrue(os.path.exists(dir), f'fail clone.')
         delete_dir(dir)

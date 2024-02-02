@@ -5,8 +5,9 @@
 <html lang="ja" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>概要: モジュールコード &#8212; southy  ドキュメント</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>diff.py &#8212; southy  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/cloud.css?v=f9ae72be" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
@@ -33,7 +34,9 @@
     
 
     <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" /> 
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Hash.py" href="Hash.html" />
+    <link rel="prev" title="Collect Package" href="index.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -47,9 +50,16 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Pythonモジュール索引"
              >モジュール</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="Hash.html" title="Hash.py"
+             accesskey="N">次へ</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Collect Package"
+             accesskey="P">前へ</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">southy  ドキュメント</a> &#187;</li>
 
-        <li class="nav-item nav-item-this"><a href="">概要: モジュールコード</a></li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Collect Package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">diff.py</a></li> 
       </ul>
     </div>
     </div>
@@ -60,19 +70,41 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>全モジュールのうち、コードを読めるもの</h1>
-<ul><li><a href="collect/Hash.html">collect.Hash</a></li>
-<li><a href="collect/diff.html">collect.diff</a></li>
-<li><a href="utils/dir_deleter.html">utils.dir_deleter</a></li>
-<li><a href="utils/project_cloner.html">utils.project_cloner</a></li>
+  <section id="module-collect.diff">
+<span id="diff-py"></span><h1>diff.py<a class="headerlink" href="#module-collect.diff" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="collect.diff.get_diff">
+<span class="sig-prename descclassname"><span class="pre">collect.diff.</span></span><span class="sig-name descname"><span class="pre">get_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/collect/diff.html#get_diff"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#collect.diff.get_diff" title="Link to this definition">¶</a></dt>
+<dd><p>開始日以降のdiffをとる</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>str</em>) -- プロジェクトのrootへのpath</p></li>
+<li><p><strong>url</strong> (<em>str</em>) -- diffをとりたいプロジェクトへのurl.引数がない場合,&quot;./tmp/origin&quot;にあるプロジェクトに対してdiffを取る</p></li>
+<li><p><strong>begin_date</strong> (<em>str</em>) -- 測定の開始日.引数がない場合,2000-1-1になる</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
 
             <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">diff.py</a><ul>
+<li><a class="reference internal" href="#collect.diff.get_diff"><code class="docutils literal notranslate"><span class="pre">get_diff()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">クイック検索</h3>
     <div class="searchformwrapper">
@@ -115,9 +147,16 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Pythonモジュール索引"
              >モジュール</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="Hash.html" title="Hash.py"
+             >次へ</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Collect Package"
+             >前へ</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">southy  ドキュメント</a> &#187;</li>
 
-        <li class="nav-item nav-item-this"><a href="">概要: モジュールコード</a></li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Collect Package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">diff.py</a></li> 
       </ul>
     </div>
     </div>
