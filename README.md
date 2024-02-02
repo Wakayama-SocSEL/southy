@@ -11,3 +11,11 @@ from {モジュール名} import {関数名}
 ```
 これで，指定した関数を使用可能
 関数は[モジュール一覧](https://wakayama-socsel.github.io/southy/)を参照
+
+### 使用例
+utilsというディレクトリのモジュール`project_cloner.py`から関数`clone_project`をインポートし，実際に使ってみる
+```
+from utils import clone_project
+
+clone_project(https://github.com/Wakayama-SocSEL/southy.git', '.')
+```
