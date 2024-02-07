@@ -19,6 +19,9 @@ sphinx = "^7.2.6"
 sphinxcontrib-napoleon = "^0.7"
 cloud-sptheme = "^1.10.1.post20200504175005"
 
+[tool.pytest.ini_options]
+pythonpath = "."
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

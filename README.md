@@ -13,9 +13,11 @@ from {モジュール名} import {関数名}
 関数は[モジュール一覧](https://wakayama-socsel.github.io/southy/)を参照
 
 ### 使用例
-utilsというディレクトリのモジュール`project_cloner.py`から関数`clone_project`をインポートし，実際に使ってみる
-```
-from utils import clone_project
+クラス`LocalRepository`をインポートし，コミット差分を取得
+```python
+from southy import LocalRepository
 
-clone_project('https://github.com/Wakayama-SocSEL/southy.git', '.')
+repo = LocalRepository('https://github.com/Wakayama-SocSEL/southy.git')
+diffs = repo.findall_commit_diffs()
+print(diffs[0])
 ```
