@@ -5,5 +5,4 @@ Collect Package
    :maxdepth: 2
    :caption: Contents:
 
-   diff
-   Hash
+   local_repository

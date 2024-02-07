@@ -11,7 +11,7 @@ class TestCollect(unittest.TestCase):
 
     def test_init(self):
         LocalRepository(self.url)
-        self.assertTrue(len(os.listdir(constant.path.TMP)) > 0, 'fail clone.')
+        self.assertTrue(len(os.listdir(constant.path.REPO_CACHE)) > 0, 'fail clone.')
 
 
     def test_findall_commit_hashes(self):

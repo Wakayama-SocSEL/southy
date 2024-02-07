@@ -5,19 +5,21 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [
+    {include= 'southy'},
     {include = 'collect', from = 'southy'},
     {include = 'constant', from = 'southy'},
     {include = 'utils', from = 'southy'},
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10.12"
 pylint = "^3.0.3"
 
 [tool.poetry.group.dev.dependencies]
 sphinx = "^7.2.6"
 sphinxcontrib-napoleon = "^0.7"
 cloud-sptheme = "^1.10.1.post20200504175005"
+pytest = "^8.0.0"
 
 [tool.pytest.ini_options]
 pythonpath = "."

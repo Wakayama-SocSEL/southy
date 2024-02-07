@@ -1,6 +1,5 @@
 import os
 
-
-ROOT = os.path.abspath(os.curdir)
+ROOT = os.path.abspath("../")
 DATA = f'{ROOT}/data'
-TMP = f'{ROOT}/tmp'
+REPO_CACHE = f'{ROOT}/repo_cache'

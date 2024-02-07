@@ -1,6 +1,5 @@
 from ..utils import Command, workspace
 
-
 class LocalRepository:
     """ローカルリポジトリを操作するクラス
     """

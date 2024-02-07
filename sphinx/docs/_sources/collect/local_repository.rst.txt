@@ -1,0 +1,4 @@
+local_repository.py
+===================
+.. automodule:: collect.local_repository
+   :members:

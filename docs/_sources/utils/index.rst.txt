@@ -5,5 +5,5 @@ Utils Package
    :maxdepth: 2
    :caption: Contents:
 
-   project_cloner
-   dir_deleter
+   command
+   workspace

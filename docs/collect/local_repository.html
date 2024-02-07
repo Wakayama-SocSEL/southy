@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>local_repository.py &#8212; southy  ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=c033477b"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=4dbe4bdc"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Utils Package" href="../utils/index.html" />
+    <link rel="prev" title="Collect Package" href="index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../utils/index.html" title="Utils Package"
+             accesskey="N">次へ</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Collect Package"
+             accesskey="P">前へ</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">southy  ドキュメント</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Collect Package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">local_repository.py</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-southy.collect.local_repository">
+<span id="local-repository-py"></span><h1>local_repository.py<a class="headerlink" href="#module-southy.collect.local_repository" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="southy.collect.local_repository.LocalRepository">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">southy.collect.local_repository.</span></span><span class="sig-name descname"><span class="pre">LocalRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/southy/collect/local_repository.html#LocalRepository"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#southy.collect.local_repository.LocalRepository" title="Link to this definition">¶</a></dt>
+<dd><p>ローカルリポジトリを操作するクラス</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="southy.collect.local_repository.LocalRepository.findall_commit_diffs">
+<span class="sig-name descname"><span class="pre">findall_commit_diffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">begin_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/southy/collect/local_repository.html#LocalRepository.findall_commit_diffs"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#southy.collect.local_repository.LocalRepository.findall_commit_diffs" title="Link to this definition">¶</a></dt>
+<dd><p>開始日以降のコミット差分の取得</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>begin_date</strong> (<em>str</em>) -- 観測を開始する日にち. デフォルトは2000-01-01</p>
+</dd>
+<dt class="field-even">例外<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>subprocess.CalledProcessError</strong> -- gitコマンドに失敗した場合に発生</p>
+</dd>
+<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dd class="field-odd"><p>コミット差分のリスト</p>
+</dd>
+<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="southy.collect.local_repository.LocalRepository.findall_commit_hashes">
+<span class="sig-name descname"><span class="pre">findall_commit_hashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">begin_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/southy/collect/local_repository.html#LocalRepository.findall_commit_hashes"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#southy.collect.local_repository.LocalRepository.findall_commit_hashes" title="Link to this definition">¶</a></dt>
+<dd><p>開始日以降のコミットハッシュ値の取得</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>begin_date</strong> (<em>str</em>) -- 観測を開始する日にち. デフォルトは2000-01-01</p>
+</dd>
+<dt class="field-even">例外<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>subprocess.CalledProcessError</strong> -- gitコマンドに失敗した場合に発生</p>
+</dd>
+<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dd class="field-odd"><p>コミットハッシュ値のリスト</p>
+</dd>
+<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">local_repository.py</a><ul>
+<li><a class="reference internal" href="#southy.collect.local_repository.LocalRepository"><code class="docutils literal notranslate"><span class="pre">LocalRepository</span></code></a><ul>
+<li><a class="reference internal" href="#southy.collect.local_repository.LocalRepository.findall_commit_diffs"><code class="docutils literal notranslate"><span class="pre">LocalRepository.findall_commit_diffs()</span></code></a></li>
+<li><a class="reference internal" href="#southy.collect.local_repository.LocalRepository.findall_commit_hashes"><code class="docutils literal notranslate"><span class="pre">LocalRepository.findall_commit_hashes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../utils/index.html" title="Utils Package"
+             >次へ</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Collect Package"
+             >前へ</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">southy  ドキュメント</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Collect Package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">local_repository.py</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2024, tomoya-n.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
