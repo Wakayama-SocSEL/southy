@@ -1,2 +1,5 @@
-from collect import get_diff
-print(get_diff('2024-1-1'))
+from southy import LocalRepository
+
+
+repo = LocalRepository('https://github.com/Wakayama-SocSEL/southy.git')
+print(repo.findall_commit_diffs())

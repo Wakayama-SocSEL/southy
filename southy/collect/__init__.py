@@ -1,2 +1,1 @@
-from .Hash import *
-from .diff import *
+from .local_repository import *

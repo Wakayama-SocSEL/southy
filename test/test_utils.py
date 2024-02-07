@@ -1,16 +1,10 @@
-import unittest
 import os
-from utils import clone_project
-from utils import delete_dir
-from constant import path
+import unittest
+
+from southy import constant
+from southy.utils import workspace
+
 
 class TestUtils(unittest.TestCase):
-    def setUp(self):
-        self.url = 'https://github.com/tomoya0318/tomoya0318.git'
-        self.root = path.ROOT
-
-    def test_clone_project(self):
-        clone_project(self.root, self.url)
-        dir = f'{path.TMP}/origin'
-        self.assertTrue(os.path.exists(dir), f'fail clone.')
-        delete_dir(dir)
+    def test_create_tmp_dir(self):
+        self.assertTrue(os.path.isdir(workspace.create_tmp_dir()), 'fail mkdir.')
